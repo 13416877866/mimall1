@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted(){
-    let url="https://www.imooc.com/common/adver-getadverlistbymarking"
+    let url="https://www.fastmock.site/mock/4a236204bb5e00c2802d827af18c5879/table/table/list"
     axios.get(url).then(()=>{
       
     })
