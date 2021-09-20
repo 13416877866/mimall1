@@ -9,6 +9,8 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
+
 //vue-cli创建项目 mi-mall
 //托管平台建立仓库 mall
 //mi-mall git add. git commit -m '' git push ---> mall
@@ -24,6 +26,12 @@ export default {
     return {
       age:30
     }
+  },
+  mounted(){
+    let url="https://www.imooc.com/common/adver-getadverlistbymarking"
+    axios.get(url).then(()=>{
+      
+    })
   }
 }
 </script>
