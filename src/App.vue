@@ -1,14 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png">
     {{age}}
-  </div>
+  </div>  
 </template>
+
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+//vue-cli创建项目 mi-mall
+//托管平台建立仓库 mall
+//mi-mall git add. git commit -m '' git push ---> mall
+//mi-mall开发 git add. git commit -m '' git push ---> mall
 
+//git clone 仓库mall ---> 本地
 export default {
   name: 'App',
   components: {
@@ -29,6 +35,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-}
+  margin-top: 60px;}
 </style>
