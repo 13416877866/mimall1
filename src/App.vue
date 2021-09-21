@@ -6,7 +6,7 @@
 
 
 <script>
-import jsonp from 'jsonp'
+
 //vue-cli创建项目 mi-mall
 //托管平台建立仓库 mall
 //mi-mall git add. git commit -m '' git push ---> mall
