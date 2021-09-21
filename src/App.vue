@@ -6,7 +6,8 @@
 
 
 <script>
-
+//index可以省略
+import storage from './storage/index'
 //vue-cli创建项目 mi-mall
 //托管平台建立仓库 mall
 //mi-mall git add. git commit -m '' git push ---> mall
@@ -23,7 +24,11 @@ export default {
     }
   },
   mounted(){
-   
+   // storage.setItem('a',1);
+  // storage.setItem('user',{a:1});
+  //storage.setItem('abc',{a:1},'user');
+  //storage.clear('a');
+  storage.clear('a','user');
    }
 }
 </script>
