@@ -7,7 +7,7 @@
 
 <script>
 //index可以省略
-import storage from './storage/index'
+//import storage from './storage/index'
 //vue-cli创建项目 mi-mall
 //托管平台建立仓库 mall
 //mi-mall git add. git commit -m '' git push ---> mall
@@ -20,15 +20,15 @@ export default {
   },
   data(){
     return {
-     
+     res:{}
     }
   },
   mounted(){
-   // storage.setItem('a',1);
-  // storage.setItem('user',{a:1});
-  //storage.setItem('abc',{a:1},'user');
-  //storage.clear('a');
-  storage.clear('a','user');
+  //本地加载请求静态json文件的形式
+   this.axios.get('/mock/user/login.json').then((res)=>{
+     this.res=res;
+   });
+ 
    }
 }
 </script>
