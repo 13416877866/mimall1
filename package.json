@@ -29,7 +29,7 @@
     "isonp": "^0.0.0",
     "mockjs": "^1.1.0",
     "node-sass": "^6.0.1",
-    "sass-loader": "^12.1.0",
+    "sass-loader": "^10.2.0",
     "vue-awesome-swiper": "^4.1.1",
     "vue-axios": "^3.3.7",
     "vue-cookie": "^1.1.4",
