@@ -10,7 +10,8 @@ if(mock){
   require('./mock/api')
 }
 //根据前端的跨域方式做调整
-axios.defaults.baseURL='https://www.fastmock.site/mock/97da03d9c92ae6b1a4ef9be1364e9823/api';
+// axios.defaults.baseURL='https://www.fastmock.site/mock/97da03d9c92ae6b1a4ef9be1364e9823/api';
+axios.defaults.baseURL='/api';
 axios.defaults.timeout=8000;
 //根据环境变量获取不同的请求地址
 //axios.defaults.baseURL=env.baseURL;

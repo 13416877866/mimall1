@@ -4,7 +4,7 @@ module.exports={
         port:8080,
         proxy:{
            '/api':{
-            target:'https://www.imooc.com/',
+            target:'https://www.fastmock.site/mock/3fb5b26bfa5f32d32ae6f74da6cd00a4/',
             changeOrigin:true,
             pathRewrite:{
                 '/api':''

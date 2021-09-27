@@ -28,55 +28,55 @@
                           <li class="product">
                             <a href="" target="_blank">
                                <div class="pro-img">
-                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/087c52d253d9301dff7743d6bf2d0330.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8cad77bda138fd94eadbc2ddfced7c56.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
                                </div>
-                               <div class="pro-name">小米cc9</div>
-                               <div class="pro-price">1799元</div>
+                               <div class="pro-name">小米</div>
+                               <div class="pro-price">555555元</div>
                             </a>
                           </li>
                           <li class="product">
                             <a href="" target="_blank">
                                <div class="pro-img">
-                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/087c52d253d9301dff7743d6bf2d0330.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8cad77bda138fd94eadbc2ddfced7c56.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
                                </div>
-                               <div class="pro-name">小米cc9</div>
-                               <div class="pro-price">1799元</div>
+                               <div class="pro-name">小米</div>
+                               <div class="pro-price">555555元</div>
                             </a>
                           </li>
-                          <li class="product">
+                            <li class="product">
                             <a href="" target="_blank">
                                <div class="pro-img">
-                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/087c52d253d9301dff7743d6bf2d0330.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8cad77bda138fd94eadbc2ddfced7c56.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
                                </div>
-                               <div class="pro-name">小米cc9</div>
-                               <div class="pro-price">1799元</div>
+                               <div class="pro-name">小米</div>
+                               <div class="pro-price">555555元</div>
                             </a>
                           </li>
-                          <li class="product">
+                            <li class="product">
                             <a href="" target="_blank">
                                <div class="pro-img">
-                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/087c52d253d9301dff7743d6bf2d0330.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8cad77bda138fd94eadbc2ddfced7c56.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
                                </div>
-                               <div class="pro-name">小米cc9</div>
-                               <div class="pro-price">1799元</div>
+                               <div class="pro-name">小米</div>
+                               <div class="pro-price">555555元</div>
                             </a>
                           </li>
-                          <li class="product">
+                            <li class="product">
                             <a href="" target="_blank">
                                <div class="pro-img">
-                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/087c52d253d9301dff7743d6bf2d0330.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8cad77bda138fd94eadbc2ddfced7c56.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
                                </div>
-                               <div class="pro-name">小米cc9</div>
-                               <div class="pro-price">1799元</div>
+                               <div class="pro-name">小米</div>
+                               <div class="pro-price">555555元</div>
                             </a>
                           </li>
-                          <li class="product">
+                            <li class="product">
                             <a href="" target="_blank">
                                <div class="pro-img">
-                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/087c52d253d9301dff7743d6bf2d0330.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
+                                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8cad77bda138fd94eadbc2ddfced7c56.png?thumb=1&w=200&h=138&f=webp&q=90" alt="">
                                </div>
-                               <div class="pro-name">小米cc9</div>
-                               <div class="pro-price">1799元</div>
+                               <div class="pro-name">小米</div>
+                               <div class="pro-price">555555元</div>
                             </a>
                           </li>
                       </ul>
@@ -84,11 +84,67 @@
                   </div>
                   <div class="item-menu">
                   <span>RedMi红米</span>
-                  <div class="children"></div>
                   </div>
                   <div class="item-menu">
                   <span>电视</span>
-                  <div class="children"></div>
+                  <div class="children">
+                       <ul>
+                          <li class="product">
+                            <a href="" target="_blank">
+                               <div class="pro-img">
+                                   <img src="/imgs/nav-img/nav-3-1.jpg" alt="">
+                               </div>
+                               <div class="pro-name">小米壁画电视 65英寸</div>
+                               <div class="pro-price">6999</div>
+                            </a>
+                          </li>
+                          <li class="product">
+                            <a href="" target="_blank">
+                               <div class="pro-img">
+                                   <img src="/imgs/nav-img/nav-3-2.jpg" alt="">
+                               </div>
+                               <div class="pro-name">小米全面屏电视E55A</div>
+                               <div class="pro-price">1999元</div>
+                            </a>
+                          </li>
+                          <li class="product">
+                            <a href="" target="_blank">
+                               <div class="pro-img">
+                                   <img src="/imgs/nav-img/nav-3-3.png" alt="">
+                               </div>
+                               <div class="pro-name">小米电视4A 32寸</div>
+                               <div class="pro-price">699元</div>
+                            </a>
+                          </li>
+                          <li class="product">
+                            <a href="" target="_blank">
+                               <div class="pro-img">
+                                   <img src="/imgs/nav-img/nav-3-4.jpg" alt="">
+                               </div>
+                               <div class="pro-name">小米透明电视</div>
+                               <div class="pro-price">79999元</div>
+                            </a>
+                          </li>
+                          <li class="product">
+                            <a href="" target="_blank">
+                               <div class="pro-img">
+                                   <img src="/imgs/nav-img/nav-3-5.jpg" alt="">
+                               </div>
+                               <div class="pro-name">小米电视大师</div>
+                               <div class="pro-price">52559元</div>
+                            </a>
+                          </li>
+                          <li class="product">
+                            <a href="" target="_blank">
+                               <div class="pro-img">
+                                   <img src="/imgs/nav-img/nav-3-6.png" alt="">
+                               </div>
+                               <div class="pro-name">查看全部</div>
+                               <div class="pro-price">查看全部</div>
+                            </a>
+                          </li>
+                      </ul>
+                  </div>
               </div>
               </div>
               <div class="header-search">
@@ -103,8 +159,10 @@
 </template>
 <script>
 export default{
-    name:'nav-header'
-}
+    name:'nav-header',
+   
+    }
+
 </script>
 <style lang="scss">
  @import '~@/assets/scss/base.scss';
@@ -198,6 +256,7 @@ export default{
                         color: $colorA;
                         .children{
                             height: 220px;
+                            opacity: 1;
                         }
                     }
                     .children{
@@ -205,10 +264,13 @@ export default{
                         top: 112px;
                         left: 0;
                         width: 1226px;
-                        height: 220px;
+                        height: 0;
+                        opacity: 0;
+                        overflow: hidden;
                         border-top: 1px solid #e5e5e5;
                         box-shadow: 0px 7px 6px 0px rgba(0,0,0,0.11);
                         z-index: 10;
+                        transition: all .5s;
                         
                         .product{
                             position: relative;
