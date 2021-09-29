@@ -34,9 +34,9 @@ export default{
     data(){
         return{
             swiperOption:{
-                autoplaya:true,
+                autoplay:true,
                 loop:true,
-               effect : 'cube',
+                effect : 'cube',
                 cubeEffect: {
                     shadowOffset: 100,
                     shadowScale: 0.6
