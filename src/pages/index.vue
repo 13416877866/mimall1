@@ -336,7 +336,19 @@ export default{
                        background-color: #ffffff;
                        text-align: center;
                        span{
-
+                               display: inline-block;
+                               width: 67px;
+                               height: 24px;
+                               font-size: 14px;
+                               line-height: 24px;
+                            //    color: $colorG;
+                            background-color:#7ecf68; ;
+                               &.new-pro{
+                                     background-color: #7ecf68;
+                               }
+                               &.kill-pro{
+                                   background-color: #e82626;
+                               }
                        }
                        .item-img{
                            img{
