@@ -85,7 +85,7 @@
                          <div class="item-info">
                              <h3>小米9</h3>
                              <p>骁龙855，索尼4800万超广角微距</p>
-                             <p class="price">2999元</p>
+                             <p class="price" @click="addCart(item.id)">2999元</p>
                          </div>
                       </div>
                       </div>
@@ -101,7 +101,10 @@
       sureText="查看购物车" 
       btnType="1" 
       modalType="middle" 
-      v-bind:showModal="true">
+      v-bind:showModal="showModal"
+      @submit="gotoCart"
+      @cancel="showModal=false"
+      >
             <template v-slot:body>
                 <p>商品添加成功！</p>
             </template>
@@ -204,7 +207,25 @@ export default{
                     img:'/imgs/ads/ads-4.jpg'
                 },
             ],
-            phoneList:[[1,1,1,1],[1,1,1,1]]
+            phoneList:[[1,1,1,1],[1,1,1,1]],
+            showModal:false
+        }
+    },
+     methods:{
+         addCart(){
+             this.showModal=true;
+             return;
+    //         this.axios.post('/cart',{
+    //             productId:id,
+    //             selected:true
+    //         }).then(()=>{
+
+    //         }).cartch(()=>{
+    //             this.showModal=true;
+    //         })
+        },
+        gotoCart(){
+            this.$router.push('/cart');
         }
     }
     
