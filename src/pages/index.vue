@@ -78,14 +78,14 @@
                   <div class="list-box">
                       <div class="list" v-for="(arr,i) in phoneList" :key="i">
                           <div class="item" v-for="(item,j) in arr" :key="j">
-                         <span>新品</span>
+                         <span v-bind:class="{'new-pro':j%2==0}">新品</span>
                          <div class="item-img">
-                             <img v-lazy="'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c5c752522100ecd364cc53752bb660bc.jpg?thumb=1&w=250&h=250&f=webp&q=90'" alt="">
+                             <img v-lazy="item.mainImage" alt="">
                          </div>
                          <div class="item-info">
-                             <h3>小米9</h3>
-                             <p>骁龙855，索尼4800万超广角微距</p>
-                             <p class="price" @click="addCart(item.id)">2999元</p>
+                             <h3>{{item.name}}</h3>
+                             <p>{{item.subtitle}}</p>
+                             <p class="price" @click="addCart(item.id)">{{item.price}}元</p>
                          </div>
                       </div>
                       </div>
@@ -207,22 +207,37 @@ export default{
                     img:'/imgs/ads/ads-4.jpg'
                 },
             ],
-            phoneList:[[1,1,1,1],[1,1,1,1]],
+            // phoneList:[[1,1,1,1],[1,1,1,1]],
+            phoneList:[],
             showModal:false
         }
     },
+    mounted(){
+      this.init();
+    },
      methods:{
+         init(){
+              this.axios.get('/products',{
+                  params:{
+                        categoryId:100012,
+                        pagesize:14
+                  }
+              }).then((res)=>{
+            //    res.list=res.list.slice(6,14);
+               this.phoneList=[res.list.slice(0,4),res.list.slice(4,8)];
+               
+              })
+         },
          addCart(){
              this.showModal=true;
-             return;
-    //         this.axios.post('/cart',{
-    //             productId:id,
-    //             selected:true
-    //         }).then(()=>{
+            // this.axios.post('/carts',{
+            //     productId:id,
+            //     selected:true
+            // }).then(()=>{
 
-    //         }).cartch(()=>{
-    //             this.showModal=true;
-    //         })
+            // }).cartch(()=>{
+            //     this.showModal=true;
+            // })
         },
         gotoCart(){
             this.$router.push('/cart');
@@ -375,8 +390,7 @@ export default{
                                height: 24px;
                                font-size: 14px;
                                line-height: 24px;
-                            //    color: $colorG;
-                            background-color:#7ecf68; ;
+                               color: $colorG;
                                &.new-pro{
                                      background-color: #7ecf68;
                                }
@@ -386,6 +400,7 @@ export default{
                        }
                        .item-img{
                            img{
+                               width: 100%;
                                height: 195px;
                            }
                        }
