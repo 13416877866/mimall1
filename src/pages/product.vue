@@ -195,6 +195,8 @@ export default {
             @include bgImg(20px,20px,'/imgs/icon-close.png');
             cursor: pointer;
             z-index: 11;
+            border-radius:11px;
+            background-color: red;
           }
           video{
             width: 100%;
