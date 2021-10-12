@@ -24,8 +24,11 @@ export default {
     }
   },
   mounted(){
-      this.getUser();
+    if(this.$cookie.get('userId')){
+       this.getUser();
       this.getCartCount();
+    }
+     
    },
    methods:{
      getUser(){
