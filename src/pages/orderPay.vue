@@ -45,18 +45,19 @@
           <h3>选择以下支付方式付款</h3>
           <div class="pay-way">
             <p>支付平台</p>
-            <div class="pay pay-ali" ></div>
-            <div class="pay pay-wechat"></div>
+            <div class="pay pay-ali" :class="{'checked':payType==1}" @click="paySubmit(1)"></div>
+            <div class="pay pay-wechat" :class="{'checked':payType==2}" @click="paySubmit(2)"></div>
           </div>
         </div>
       </div>
     </div>
-    
+    <scan-pay-code v-if="showPay" @close="closePayModal" :img="payImg"></scan-pay-code>
    
   </div>
 </template>
 <script>
-
+import QRCode from 'qrcode'
+import ScanPayCode from './../components/ScanPayCode.vue'
 export default{
   name:'order-pay',
   data(){
@@ -65,10 +66,14 @@ export default{
       addressInfo:'',//收货人地址
       orderDetail:[],//订单详情，包含商品列表
       showDetail:false,//是否显示订单详情
-      
+      payType:'',//支付类型
+      showPay:false,//是否显示微信支付弹框
+      payImg:'',//微信支付的二维码地址
     }
   },
-  
+  components:{
+  ScanPayCode
+  },
   mounted(){
     this.getOrderDetail();
   },
@@ -81,10 +86,35 @@ export default{
        
       })
     },
-   
+   paySubmit(payType){
+    if(payType==1){
+        window.open('/#/order/alipay?orderId='+this.orderId,'_blank');
+    }else{
+       this.axios.post('/pay',{
+          orderId:this.orderId,
+          orderName:'Vue高仿小米商城',
+          amount:0.01,
+          payType:2,//1是支付宝,2微信
+        }).then((res)=>{
+            QRCode.toDataURL(res.content)
+            .then(url => {
+              this.showPay=true;
+              this.payImg=url;
+            })
+            .catch(() => {
+              this.$message.error('微信二维码生成失败，请稍后重试');
+            })
+        })
+      }
+    },
+    //关闭微信弹框
+    closePayModal(){
+       this.showPay=false;
+    }
+   }
    
   }
-}
+
 </script>
 <style lang="scss">
   .order-pay{

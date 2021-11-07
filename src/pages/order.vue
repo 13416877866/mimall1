@@ -35,9 +35,12 @@ export default{
         }else if(path=='/order/list'){
              this.title="订单列表";
              this.tip="请谨慎钓鱼链接或诈骗电话，了解更多>";
-        }else if(path=='/order/pay'){
+        }else if(path==`/order/pay`){
              this.title="订单支付";
              this.tip="请谨慎钓鱼链接或诈骗电话，了解更多>";
+        }else{
+            this.title="订单支付";
+            this.tip="请谨慎钓鱼链接或诈骗电话，了解更多>";
         }
     }
 }
