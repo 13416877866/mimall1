@@ -18,14 +18,14 @@
           <path d="M21.677 9.806c-0.569 0-1.032 0.463-1.032 1.032v14.452c0 0.569 0.463 1.032 1.032 1.032s1.032-0.463 1.032-1.032v-14.452c0-0.569-0.463-1.032-1.032-1.032z" class="path4"></path>
         </symbol>
       </defs>
-      </svg>
+    </svg>
       <div class="wrapper">
         <div class="container">
           <div class="order-box">
             <div class="item-address">
               <h2 class="addr-title">收货地址</h2>
               <div class="addr-list clearfix">
-                <div class="addr-info" v-for="(item,index) in list" :key="index">
+                <div class="addr-info" :class="{'checked':index==checkIndex}" @click="checkIndex=index" v-for="(item,index) in list" :key="index">
                   <h2>{{item.receiverName}}</h2>
                   <div class="phone">{{item.receiverMobile}}</div>
                   <div class="street">{{item.receiverProvince+' '+item.receiverCity+' '+item.receiverDistrict+' '+item.receiverAddress}}</div>
@@ -35,7 +35,7 @@
                         <use xlink:href="#icon-del"></use>
                       </svg>
                     </a>
-                     <a href="javascipt:;" class="fr">
+                     <a href="javascipt:;" class="fr" @click="editAddressModal(item)">
                       <svg class="icon icon-edit">
                         <use xlink:href="#icon-edit"></use>
                       </svg>
@@ -94,7 +94,7 @@
             </div>
             <div class="btn-group">
               <a href="/#/cart" class="btn btn-default btn-large">返回购物车</a>
-              <a href="javascript:;" class="btn btn-large">去结算</a>
+              <a href="javascript:;" class="btn btn-large" @click="orderSubmit">去结算</a>
             </div>
           </div>
         </div>
@@ -166,6 +166,7 @@ export default{
       userAction:'',//用户行为：0：新增 1：编辑 2：删除
       showDelModal:false,//是否显示删除弹框
       showEditModal:false,//是否显示新增或者编辑弹窗
+      checkIndex:0,//当前收货地址选中索引
     }
     },
     components:{
@@ -184,6 +185,11 @@ export default{
       openAddressModal(){
         this.userAction=0;
         this.checkedItem={};
+        this.showEditModal=true;
+      },
+      editAddressModal(item){
+        this.userAction=1;
+        this.checkedItem=item;
         this.showEditModal=true;
       },
       delAddress(item){
@@ -255,6 +261,23 @@ export default{
             this.count+=item.quantity;
           })
          })
+      },
+      orderSubmit(){
+        let item=this.list[this.checkIndex];
+        if(!item){
+          this.$message.error('请选择一个收货地址');
+          return;
+        }
+        this.axios.post('/orders',{
+          shippingId:item.id,
+        }).then((res)=>{
+          this.$router.push({
+            path:'/order/pay',
+            query:{
+              orderNo:res.orderNo
+            }
+          })
+        })
       }
     }
 }
