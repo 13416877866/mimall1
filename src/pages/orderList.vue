@@ -47,7 +47,7 @@
             </div>
           </div>
           <el-pagination
-            v-if="false"
+           
             class="pagination"
             background
             layout="prev, pager, next"
@@ -66,6 +66,7 @@
   </div>
 </template>
 <script>
+  
   import OrderHeader from './../components/OrderHeader'
   import loading from './../components/Loading.vue'
   import NoDate from './../components/NoData.vue'
@@ -200,15 +201,8 @@
         .pagination{
           text-align: right;
         }
-        .el-pagination.is-background .el-pager li:not(.disabled).active{
-          background-color: #ff6600;
-         
-        }
-        .el-button--primary {
-            
-            background-color: #ff6600;
-            border-color: #ff6600;
-        }
+        
+       
         .load-more{
           text-align: center;
         }
