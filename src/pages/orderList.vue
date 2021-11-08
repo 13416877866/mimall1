@@ -8,6 +8,7 @@
     <div class="wrapper">
       <div class="container">
         <div class="order-box">
+          <loading v-if="loading"></loading>
           <div class="order" v-for="(order,index) in list" :key="index">
             <div class="order-title">
               <div class="item-info fl">
@@ -45,6 +46,7 @@
               </div>
             </div>
           </div>
+          <no-date v-if="!loading&&list.length==0"></no-date>
         </div>
       </div>
     </div>
@@ -52,13 +54,18 @@
 </template>
 <script>
   import OrderHeader from './../components/OrderHeader'
+  import loading from './../components/Loading.vue'
+  import NoDate from './../components/NoData.vue'
   export default{
     name:'order-list',
     components:{
-      OrderHeader
+      OrderHeader,
+      loading,
+      NoDate,
     },
     data(){
       return{
+        loading:true,
         list:[],
       }
     },
@@ -68,7 +75,10 @@
     methods:{
       getOrderList(){
         this.axios.get('/orders').then((res)=>{
+            this.loading=false;
             this.list=res.list;
+        }).catch(()=>{
+          this.loading=false;
         })
       },
 
