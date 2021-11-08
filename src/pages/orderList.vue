@@ -1,10 +1,18 @@
 <template>
     <div>
-      OrderList 
+       <order-header title="订单列表">
+        <template v-slot:tip>
+          <span>请谨慎钓鱼链接或诈骗电话，了解更多></span>
+        </template>
+      </order-header>
     </div>
 </template>
 <script>
+import OrderHeader from './../components/OrderHeader.vue'
 export default{
-    name:'order-list'
+    name:'order-list',
+    components:{
+      OrderHeader,
+    }
 }
 </script>
