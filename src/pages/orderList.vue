@@ -46,8 +46,8 @@
               </div>
             </div>
           </div>
-          <no-date v-if="!loading&&list.length==0"></no-date>
           <el-pagination
+            v-if="false"
             class="pagination"
             background
             layout="prev, pager, next"
@@ -56,6 +56,10 @@
             @current-change="handleChange"
             >
           </el-pagination>
+          <div class="load-more">
+                <el-button type="primary" :loading="loading" @click="loadMore">加载更多</el-button>
+          </div>
+          <no-date v-if="!loading&&list.length==0"></no-date>
         </div>
       </div>
     </div>
@@ -65,18 +69,19 @@
   import OrderHeader from './../components/OrderHeader'
   import loading from './../components/Loading.vue'
   import NoDate from './../components/NoData.vue'
-  import { Pagination } from 'element-ui'
+  import { Pagination,Button } from 'element-ui'
   export default{
     name:'order-list',
     components:{
       OrderHeader,
       loading,
       NoDate,
-      [Pagination.name]:Pagination
+      [Pagination.name]:Pagination,
+      [Button.name]:Button
     },
     data(){
       return{
-        loading:true,
+        loading:false,
         list:[],
         pageSize:10,
         pageNum:1,
@@ -88,13 +93,15 @@
     },
     methods:{
       getOrderList(){
+        this.loading=true;
         this.axios.get('/orders',{
           params:{
+            pageSize:10,
             pageNum:this.pageNum
           }
         }).then((res)=>{
             this.loading=false;
-            this.list=res.list;
+            this.list=this.list.concat(res.list);
             this.total=res.total;
         }).catch(()=>{
           this.loading=false;
@@ -120,6 +127,10 @@
       handleChange(pageNum){
        this.pageNum=pageNum;
        this.getOrderList();
+      },
+      loadMore(){
+         this.pageNum++;
+         this.getOrderList();
       },
     }
   }
@@ -191,7 +202,15 @@
         }
         .el-pagination.is-background .el-pager li:not(.disabled).active{
           background-color: #ff6600;
-          color: #fff;
+         
+        }
+        .el-button--primary {
+            
+            background-color: #ff6600;
+            border-color: #ff6600;
+        }
+        .load-more{
+          text-align: center;
         }
         
       }
