@@ -47,6 +47,15 @@
             </div>
           </div>
           <no-date v-if="!loading&&list.length==0"></no-date>
+          <el-pagination
+            class="pagination"
+            background
+            layout="prev, pager, next"
+            :pageSize="pageSize"
+            :total="total"
+            @current-change="handleChange"
+            >
+          </el-pagination>
         </div>
       </div>
     </div>
@@ -56,17 +65,22 @@
   import OrderHeader from './../components/OrderHeader'
   import loading from './../components/Loading.vue'
   import NoDate from './../components/NoData.vue'
+  import { Pagination } from 'element-ui'
   export default{
     name:'order-list',
     components:{
       OrderHeader,
       loading,
       NoDate,
+      [Pagination.name]:Pagination
     },
     data(){
       return{
         loading:true,
         list:[],
+        pageSize:10,
+        pageNum:1,
+        total:0,
       }
     },
     mounted(){
@@ -74,9 +88,14 @@
     },
     methods:{
       getOrderList(){
-        this.axios.get('/orders').then((res)=>{
+        this.axios.get('/orders',{
+          params:{
+            pageNum:this.pageNum
+          }
+        }).then((res)=>{
             this.loading=false;
             this.list=res.list;
+            this.total=res.total;
         }).catch(()=>{
           this.loading=false;
         })
@@ -97,7 +116,11 @@
             orderNo
           }
         })
-      }
+      },
+      handleChange(pageNum){
+       this.pageNum=pageNum;
+       this.getOrderList();
+      },
     }
   }
 </script>
@@ -164,18 +187,13 @@
           }
         }
         .pagination{
-          text-align:right;
+          text-align: right;
         }
         .el-pagination.is-background .el-pager li:not(.disabled).active{
-          background-color: #FF6600;
+          background-color: #ff6600;
+          color: #fff;
         }
-        .el-button--primary{
-          background-color: #FF6600;
-          border-color: #FF6600;
-        }
-        .load-more,.scroll-more{
-          text-align:center;
-        }
+        
       }
     }
   }
